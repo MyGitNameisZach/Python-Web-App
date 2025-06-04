@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title> Guessing Game</Title>
+    </head>
+    <body>
+        <h1>Guessing Game</h1>
+        <h2>The computer will generate a number between 1-10, guess the right number too win</h2>
+        {% if message %}
+            <h3>{{ message}}</h3>
+        {% endif %}
+        <form method="post" action="{{ url_for('submit') }}">
+            <input type="text" name="Guess" placeholder="Enter your guess">
+            <button type="submit">Submit</button>
+        </form>  
+        <form action="{{ url_for('hello') }}">
+            <button type="submit">Home</button>
+        </form>
+    </body>
+</html>
