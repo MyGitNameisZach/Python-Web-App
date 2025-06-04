@@ -20,7 +20,8 @@ def submit():
 
     randnum = random.randint(1,10)
     print(randnum)
-    if randnum == guess:
+    guessnum = int(guess)
+    if randnum == guessnum:
         message= f"Your guess was correct! You guessed {guess} and the random number was {randnum} "
     else:
         message= f"Your guess was wrong:( You guessed {guess} and the random number was {randnum}"
