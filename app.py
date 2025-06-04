@@ -21,6 +21,7 @@ def submit():
     randnum = random.randint(1,10)
     print(randnum)
     guessnum = int(guess)
+    print(guessnum)
     if randnum == guessnum:
         message= f"Your guess was correct! You guessed {guess} and the random number was {randnum} "
     else:
