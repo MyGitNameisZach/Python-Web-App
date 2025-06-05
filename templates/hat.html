@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title> Sorting Hat</Title>
+    </head>
+    <body>
+        <h1>Sorting Hat</h1>
+        <h2>Find out what house you belong in!</h2>
+        {% if message %}
+            <h3>{{ message}}</h3>
+        {% endif %}
+        <form method="post" action="{{ url_for('submitHat') }}">
+        <label>1. Which do you prefer, Dawn or Dusk? </label><br>
+        <select name="q1" required>
+            <option value="">Select an option</option>
+            <option value="Dawn">Dawn</option>
+            <option value="Dusk">Dusk</option>
+        </select><br><br>
+
+        <label>2. When you die, do you want to be remembered as The Good, The Great, The Wise or The Bold?</label><br>
+        <select name="q2" required>
+            <option value="">Select an option</option>
+            <option value="TheGood">The Good</option>
+            <option value="TheGreat">The Great</option>
+            <option value="TheWise">The Wise</option>
+            <option value="TheBold">The Bold</option>
+        </select><br><br>
+
+        <label>3. What instrument most pleases your ear, The Violin, The Piano, The Trumpet or The Drum?</label><br>
+        <select name="q3" required>
+            <option value="">Select an option</option>
+            <option value="TheViolin">The Violin</option>
+            <option value="ThePiano">The Piano</option>
+            <option value="TheTrumpet">The Trumpet</option>
+            <option value="TheDrum">The Drum</option>
+        </select><br><br>
+        <button type="submit">Submit</button>
+        </form>  
+        <form action="{{ url_for('hello') }}">
+            <button type="submit">Home</button>
+        </form>
+    </body>
+</html>
