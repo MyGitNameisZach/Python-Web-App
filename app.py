@@ -1,11 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for
 import random
+import requests
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return render_template('home.html')
+    url = "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard"
+    response = requests.get(url)
+    data = response.json()
+
+    games = data.get("events", [])
+    return render_template('home.html',games=games)
 
 @app.route("/GuessingGame")
 def GG():
